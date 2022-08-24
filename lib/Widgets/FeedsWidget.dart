@@ -35,7 +35,10 @@ class _FeedsWidgetState extends State<FeedsWidget> {
 
     return Material(
       borderRadius: BorderRadius.circular(10),
-      child: Column(children: [
+      child: Column(
+          mainAxisAlignment : MainAxisAlignment.center,
+
+        children: [
         FancyShimmerImage(
           height: size.width * 0.21,
           width: size.width * 0.2,
@@ -57,33 +60,34 @@ class _FeedsWidgetState extends State<FeedsWidget> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(
-                flex: 6,
+                flex: 5,
                 child: PriceWidget(
                     salePrice: 6.5,
                     price: 4,
                     textPrice: _textEditingController.text,
                     isOnSale: true),
               ),
+              SizedBox(width: 2),
               Flexible(
                 flex: 3,
                 child: Row(
                   children: [
-                    TextWidget(
-                      text: 'KG',
-                      fontSize: 15,
-                      color: color,
-                      isTitle: true,
+                    FittedBox(
+                      child: TextWidget(
+                        text: 'KG',
+                        fontSize: 15,
+                        color: color,
+                      ),
                     ),
                     SizedBox(
                       width: 3,
                     ),
-                    SizedBox(
-                      width: 30,
+                    Flexible(
                       child: TextFormField(
                         controller: _textEditingController,
                         keyboardType: TextInputType.number,

@@ -2,7 +2,6 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 import 'package:iconly/iconly.dart';
-
 import '../services/Utils.dart';
 import 'PriceWidget.dart';
 
@@ -28,7 +27,7 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
           padding: const EdgeInsets.all(8.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment : MainAxisAlignment.spaceBetween, children: [
               FancyShimmerImage(
                 height: size.width * 0.22,
                 width: size.width * 0.22,
@@ -73,7 +72,7 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
             ),
             TextWidget(
                 text: 'Product title',
-                fontSize: 16,
+                fontSize: 18,
                 color: color,
                 isTitle: true),
             const SizedBox(
