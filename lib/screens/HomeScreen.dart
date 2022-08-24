@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
+import 'package:groceryapp/inner_Screen/ProductsOnSale.dart';
 import 'package:groceryapp/providers/darkTheme_provider.dart';
+import 'package:groceryapp/services/GlobalMethods.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:card_swiper/card_swiper.dart';
@@ -27,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final color = Utils(context).color;
+    Color color = Utils(context).color;
     Size size = Utils(context).screenSize;
     return Scaffold(
       body: SingleChildScrollView(
@@ -55,7 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 8,
             ),
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  GlobalMethods.navigateTo(context: context,routeName: ProductsOnSale.routeName);
+                },
                 child: TextWidget(
                   color: Colors.blue,
                   text: 'View All',

@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/HeartBtn.dart';
 import 'package:groceryapp/Widgets/PriceWidget.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
-import 'package:iconly/iconly.dart';
-
 import '../services/Utils.dart';
 
 class FeedsWidget extends StatefulWidget {
@@ -64,7 +62,7 @@ class _FeedsWidgetState extends State<FeedsWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(
-                flex : 6,
+                flex: 6,
                 child: PriceWidget(
                     salePrice: 6.5,
                     price: 4,
@@ -80,7 +78,11 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                       fontSize: 15,
                       color: color,
                       isTitle: true,
-                    ),SizedBox(width: 3,), SizedBox(
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    SizedBox(
                       width: 30,
                       child: TextFormField(
                         controller: _textEditingController,
@@ -93,7 +95,10 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                           setState(() {
                             _textEditingController.text =
                                 value.isEmpty ? '1' : value;
-                            _textEditingController.selection = TextSelection.fromPosition(TextPosition(offset: _textEditingController.text.length));
+                            _textEditingController.selection =
+                                TextSelection.fromPosition(TextPosition(
+                                    offset:
+                                        _textEditingController.text.length));
                           });
                         },
                       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:groceryapp/inner_Screen/ProductsOnSale.dart';
 import 'package:groceryapp/providers/darkTheme_provider.dart';
 import 'package:groceryapp/screens/BottomBarScreen.dart';
-import 'package:groceryapp/screens/HomeScreen.dart';
 import 'package:groceryapp/consts/Style.dart';
 import 'package:provider/provider.dart';
 void main() {
@@ -41,6 +41,9 @@ class _MyAppState extends State<MyApp> {
             title: 'Flutter Demo',
             theme: Style.themeData(darkthemeprovider.getThemeMode),
             home: const BottomBarScreen(),
+            routes: {
+              ProductsOnSale.routeName : (cxt) => const ProductsOnSale(),
+            },
           );
         }
       ),
