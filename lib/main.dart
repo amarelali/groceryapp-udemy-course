@@ -4,6 +4,8 @@ import 'package:groceryapp/providers/darkTheme_provider.dart';
 import 'package:groceryapp/screens/BottomBarScreen.dart';
 import 'package:groceryapp/consts/Style.dart';
 import 'package:provider/provider.dart';
+
+import 'inner_Screen/FeedsScreen.dart';
 void main() {
   runApp( MyApp());
 }
@@ -43,6 +45,7 @@ class _MyAppState extends State<MyApp> {
             home: const BottomBarScreen(),
             routes: {
               ProductsOnSale.routeName : (cxt) => const ProductsOnSale(),
+              FeedsScreen.routeName : (ctx) => const FeedsScreen(),
             },
           );
         }

@@ -14,8 +14,7 @@ class CategoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final utils = Utils(context);
-    final Color color = utils.color;
+    Color color = Utils(context).color;
     double _screenWidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(

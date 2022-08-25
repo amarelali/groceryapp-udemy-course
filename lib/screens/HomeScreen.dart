@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
+import 'package:groceryapp/inner_Screen/FeedsScreen.dart';
 import 'package:groceryapp/inner_Screen/ProductsOnSale.dart';
 import 'package:groceryapp/providers/darkTheme_provider.dart';
 import 'package:groceryapp/services/GlobalMethods.dart';
@@ -92,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Flexible(
                   child: SizedBox(
-                    height: size.width * 0.45,
+                    height: size.width * 0.47,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 5,
@@ -117,8 +118,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: color,
                       isTitle: true,
                     ),
-                    TextWidget(
-                        text: 'Browse All', fontSize: 20, color: Colors.blue),
+                    GestureDetector(
+                      onTap: (){
+                        GlobalMethods.navigateTo(context: context, routeName: FeedsScreen.routeName);
+                      },
+                      child: TextWidget(
+                          text: 'Browse All', fontSize: 20, color: Colors.blue),
+                    ),
                   ]),
             ),
             Padding(
