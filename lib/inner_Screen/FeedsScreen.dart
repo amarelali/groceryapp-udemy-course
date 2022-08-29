@@ -23,6 +23,7 @@ class _FeedsScreenState extends State<FeedsScreen> {
   void dispose(){
     super.dispose();
     _searchTextController?.dispose();
+    _searchFocusNode.unfocus;
   }
   @override
   Widget build(BuildContext context) {
@@ -61,9 +62,9 @@ class _FeedsScreenState extends State<FeedsScreen> {
                           borderRadius: BorderRadius.circular(12)),
                       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(width: 1,color: Colors.greenAccent)),
-                    prefix: const Icon(Icons.search,color: Colors.greenAccent,),),
+                    prefixIcon: const Icon(Icons.search,color: Colors.greenAccent,),
+                    suffix:  Icon(Icons.clear,color: (_searchFocusNode.hasFocus) ? Colors.red : color ),),
                     focusNode: _searchFocusNode,
-
                   ),
                 ),
               ),
@@ -74,7 +75,7 @@ class _FeedsScreenState extends State<FeedsScreen> {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 childAspectRatio: size.width / (size.height * 0.65),
-                children: List.generate(16, (index) => FeedsWidget()),
+                children: List.generate(16, (index) => const FeedsWidget()),
               ),
             ],
           ),

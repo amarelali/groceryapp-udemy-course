@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 import 'package:groceryapp/inner_Screen/FeedsScreen.dart';
 import 'package:groceryapp/inner_Screen/ProductsOnSale.dart';
-import 'package:groceryapp/providers/darkTheme_provider.dart';
 import 'package:groceryapp/services/GlobalMethods.dart';
 import 'package:iconly/iconly.dart';
-import 'package:provider/provider.dart';
 import 'package:card_swiper/card_swiper.dart';
 
 import '../Widgets/FeedsWidget.dart';
@@ -30,6 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print('Home Screen \n Utils(context) getTheme ${Utils(context).getTheme}\nUtils(context) color ${Utils(context).color}\n ');
+
     Color color = Utils(context).color;
     Size size = Utils(context).screenSize;
     return Scaffold(
@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: OnSaleWidget(),
+                            child: const OnSaleWidget(),
                           );
                         }),
                   ),
@@ -132,11 +132,12 @@ class _HomeScreenState extends State<HomeScreen> {
               child: GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.all(0),
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 childAspectRatio: size.width / (size.height * 0.65),
-                children: List.generate(4, (index) => FeedsWidget()),
+                children: List.generate(4, (index) => const FeedsWidget()),
               ),
             ),
           ],

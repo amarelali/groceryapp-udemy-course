@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:groceryapp/screens/HomeScreen.dart';
 import 'package:groceryapp/screens/UserScreen.dart';
 import 'package:groceryapp/screens/CategoriesScreen.dart';
-import 'package:groceryapp/screens/CartScreen.dart';
+import 'package:groceryapp/cart/CartScreen.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 import '../providers/darkTheme_provider.dart';
+import '../services/Utils.dart';
 class BottomBarScreen extends StatefulWidget {
   const BottomBarScreen({Key? key}) : super(key: key);
 
@@ -14,7 +15,7 @@ class BottomBarScreen extends StatefulWidget {
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
   final List<Map<String,dynamic>> _pages = [
     {'page': const  HomeScreen(),'title': 'Home Screen'},
     {'page': const  CategoriesScreen(),'title': 'Categories Screen'},
@@ -28,8 +29,10 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    var darkmode = Provider.of<DarkThemeProvider>(context);
-    bool isDark = darkmode.getThemeMode;
+    final Utils utils = Utils(context);
+    bool isDark = utils.getTheme;
+    print('BottomBarScreen \n Utils(context) getTheme ${Utils(context).getTheme}\nUtils(context) color ${Utils(context).color}\n ');
+
     return Scaffold(
       body: _pages[_selectedIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
@@ -50,7 +53,6 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
 
       ),
-      appBar: AppBar(title: Text(_pages[_selectedIndex]['title']),),
     );
   }
 }

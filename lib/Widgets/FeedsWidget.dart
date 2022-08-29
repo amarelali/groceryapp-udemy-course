@@ -31,14 +31,11 @@ class _FeedsWidgetState extends State<FeedsWidget> {
   @override
   Widget build(BuildContext context) {
     Size size = Utils(context).screenSize;
-    Color color = Utils(context).color;
+    final Color color = Utils(context).color;
 
     return Material(
       borderRadius: BorderRadius.circular(10),
-      child: Column(
-          mainAxisAlignment : MainAxisAlignment.center,
-
-        children: [
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         FancyShimmerImage(
           height: size.width * 0.21,
           width: size.width * 0.2,
@@ -67,10 +64,11 @@ class _FeedsWidgetState extends State<FeedsWidget> {
               Flexible(
                 flex: 5,
                 child: PriceWidget(
-                    salePrice: 6.5,
-                    price: 4,
-                    textPrice: _textEditingController.text,
-                    isOnSale: true),
+                  salePrice: 6.5,
+                  price: 4,
+                  textPrice: _textEditingController.text,
+                  isOnSale: true,
+                ),
               ),
               SizedBox(width: 2),
               Flexible(
