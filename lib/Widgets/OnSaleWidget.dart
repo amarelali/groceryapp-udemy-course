@@ -15,8 +15,8 @@ class OnSaleWidget extends StatefulWidget {
 class _OnSaleWidgetState extends State<OnSaleWidget> {
   @override
   Widget build(BuildContext context) {
-    Color color = Utils(context).color;
-    Size size = Utils(context).screenSize;
+    final Color color = Utils(context).color;
+    final Size size = Utils(context).screenSize;
     return Material(
       color: Theme.of(context).cardColor.withOpacity(0.9),
       borderRadius: BorderRadius.circular(12),

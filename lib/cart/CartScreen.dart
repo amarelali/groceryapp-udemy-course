@@ -16,11 +16,11 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
-    print(
-        'Cart Screen \n Utils(context) getTheme ${Utils(context).getTheme}\nUtils(context) color ${Utils(context).color}\n ');
-    Color color = Utils(context).color;
+    final Color color = Utils(context).color;
+
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           title: TextWidget(
             text: 'Cart (16)',
             color: color,

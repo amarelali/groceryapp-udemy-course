@@ -28,10 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('Home Screen \n Utils(context) getTheme ${Utils(context).getTheme}\nUtils(context) color ${Utils(context).color}\n ');
-
-    Color color = Utils(context).color;
-    Size size = Utils(context).screenSize;
+    final Color color = Utils(context).color;
+    final Size size = Utils(context).screenSize;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

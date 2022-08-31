@@ -17,7 +17,7 @@ class PriceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color color = Utils(context).color;
+    final Color color = Utils(context).color;
     final userPrice = isOnSale ? salePrice : price;
     return FittedBox(
       child: Row(

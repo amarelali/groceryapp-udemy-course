@@ -29,10 +29,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    final Utils utils = Utils(context);
-    bool isDark = utils.getTheme;
-    print('BottomBarScreen \n Utils(context) getTheme ${Utils(context).getTheme}\nUtils(context) color ${Utils(context).color}\n ');
-
+    final isDark = Utils(context).getTheme;
     return Scaffold(
       body: _pages[_selectedIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(

@@ -8,7 +8,7 @@ class ProductsOnSale extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Utils utils = Utils(context);
+    final Utils utils = Utils(context);
     Size size = utils.screenSize;
     Color color = utils.color;
     return Scaffold(

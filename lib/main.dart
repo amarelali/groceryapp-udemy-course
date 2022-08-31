@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceryapp/inner_Screen/ProductDetails.dart';
 import 'package:groceryapp/inner_Screen/ProductsOnSale.dart';
 import 'package:groceryapp/providers/darkTheme_provider.dart';
 import 'package:groceryapp/screens/BottomBarScreen.dart';
@@ -27,7 +28,6 @@ class _MyAppState extends State<MyApp> {
    void initState(){
      super.initState();
      getCurrentAppTheme();
-
    }
   // This widget is the root of your application.
   @override
@@ -41,11 +41,12 @@ class _MyAppState extends State<MyApp> {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
-            theme: Style.themeData(darkthemeprovider.getThemeMode),
-            home: const BottomBarScreen(),
+            theme: Style.themeData(darkthemeprovider.getThemeMode,context),
+            home: BottomBarScreen(),
             routes: {
               ProductsOnSale.routeName : (cxt) => const ProductsOnSale(),
               FeedsScreen.routeName : (ctx) => const FeedsScreen(),
+              ProductDetails.routeName : (ctx)=> const ProductDetails(),
             },
           );
         }
