@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 import 'package:groceryapp/cart/CartWidget.dart';
-import 'package:iconly/iconly.dart';
 
 import '../services/Utils.dart';
 
@@ -27,7 +26,7 @@ class _CartScreenState extends State<CartScreen> {
             fontSize: 22,
             isTitle: true,
           ),
-          actions: [Icon(CupertinoIcons.delete)]),
+          actions: [Icon(CupertinoIcons.delete,color:  color ,)]),
       body: Center(
         child: ListView.builder(
             itemCount: 6,

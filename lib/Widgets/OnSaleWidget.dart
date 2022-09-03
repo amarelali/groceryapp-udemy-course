@@ -2,6 +2,8 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 import 'package:iconly/iconly.dart';
+import '../inner_Screen/ProductDetails.dart';
+import '../services/GlobalMethods.dart';
 import '../services/Utils.dart';
 import 'PriceWidget.dart';
 
@@ -22,7 +24,8 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: () {},
+        onTap: () {        GlobalMethods.navigateTo(context: context, routeName: ProductDetails.routeName);
+        },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child:

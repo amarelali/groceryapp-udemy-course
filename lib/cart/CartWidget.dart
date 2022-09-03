@@ -17,17 +17,19 @@ class CartWidget extends StatefulWidget {
 }
 
 class _CartWidgetState extends State<CartWidget> {
+  TextEditingController _quantityTextController =
+  TextEditingController(text: '1');
+  @override
+  void initState() {
+    super.initState();
+    _quantityTextController.text = '1';
+  }
   @override
   Widget build(BuildContext context) {
-    TextEditingController _quantityTextController =
-        TextEditingController(text: '1');
+
     final Size size = Utils(context).screenSize;
     final Color color = Utils(context).color;
-    @override
-    void initState() {
-      super.initState();
-      _quantityTextController.text = '1';
-    }
+
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3),
@@ -62,7 +64,13 @@ class _CartWidgetState extends State<CartWidget> {
                         children: [
                           Flexible(
                             child: _quantityController(
-                                fct: () {},
+                                fct: () {
+                                  if(_quantityTextController.text == '1'){return;}else{
+                                    setState(() {
+                                      _quantityTextController.text= (int.parse(_quantityTextController.text) -1).toString();
+                                    });
+                                  }
+                                },
                                 icon: CupertinoIcons.minus,
                                 color: Colors.redAccent),
                           ),
@@ -75,7 +83,7 @@ class _CartWidgetState extends State<CartWidget> {
                                 textAlign: TextAlign.center,
                                 decoration: InputDecoration(
                                     focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide())),
+                                        borderSide: BorderSide(color: color))),
                                 inputFormatters: [
                                   FilteringTextInputFormatter.allow(
                                     RegExp('[0-9]'),
@@ -93,7 +101,11 @@ class _CartWidgetState extends State<CartWidget> {
                               )),
                           Flexible(
                             child: _quantityController(
-                                fct: () {},
+                                fct: () {
+                                  setState(() {
+                                    _quantityTextController.text = (int.parse(_quantityTextController.text) + 1).toString();
+                                  });
+                                },
                                 icon: CupertinoIcons.add,
                                 color: Colors.greenAccent),
                           )

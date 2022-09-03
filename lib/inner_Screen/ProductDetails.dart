@@ -46,6 +46,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             color: color,
           ),
         ),
+        centerTitle: true,
       ),
       body: Column(
         children: [
@@ -89,8 +90,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         TextWidget(text: '/KG', fontSize: 14, color: color),
                         const SizedBox(
                           width: 5,
-                        ),
-                        TextWidget(text: '\$10', fontSize: 14, color: color),
+                        ),Text('\$10',style : TextStyle(fontSize: 14, color: color,decoration: TextDecoration.lineThrough) ),
                         const Spacer(),
                         Material(
                           color: Colors.green,
@@ -115,7 +115,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                         children: [
                           Flexible(
                             child: _quantityController(
-                                fct: () {},
+                                fct: () {
+                                  if(_quantityTextController.text == '1'){
+                                  return;
+                                }else{
+                                  setState(() {
+                                    _quantityTextController.text= (int.parse(_quantityTextController.text) -1).toString();
+                                  });
+                                }},
                                 icon: CupertinoIcons.minus_square,
                                 color: Colors.redAccent),
                           ),
@@ -146,7 +153,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                               )),
                           Flexible(
                             child: _quantityController(
-                                fct: () {},
+                                fct: () {setState(() {
+                                  _quantityTextController.text= (int.parse(_quantityTextController.text) +1).toString();
+                                });},
                                 icon: CupertinoIcons.plus_square,
                                 color: Colors.greenAccent),
                           )
@@ -174,7 +183,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 children: [
                                   TextWidget(
                                       text: '\$ 2.99', fontSize: 20, color:color),
-                                  TextWidget(text: '/KG', fontSize: 15, color: color),
+                                  TextWidget(text: '/${_quantityTextController.text}KG', fontSize: 15, color: color),
                                 ],
                               ),
                             ],
