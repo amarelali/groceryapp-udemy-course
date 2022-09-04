@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
-import 'package:groceryapp/cart/CartWidget.dart';
-
-import '../services/Utils.dart';
+import 'package:groceryapp/screens/cart/CartWidget.dart';
+import '../../services/Utils.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({Key? key}) : super(key: key);

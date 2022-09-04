@@ -6,8 +6,7 @@ import 'package:groceryapp/Widgets/HeartBtn.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 import 'package:groceryapp/services/GlobalMethods.dart';
 import 'package:groceryapp/services/Utils.dart';
-
-import '../inner_Screen/ProductDetails.dart';
+import '../../inner_Screen/ProductDetails.dart';
 
 class CartWidget extends StatefulWidget {
   const CartWidget({Key? key}) : super(key: key);
@@ -161,6 +160,7 @@ class _CartWidgetState extends State<CartWidget> {
           child: Icon(
             icon,
             size: 20,
+            color:Colors.white,
           ),
         ),
       ),

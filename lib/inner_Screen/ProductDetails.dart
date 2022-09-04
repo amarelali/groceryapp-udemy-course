@@ -6,6 +6,7 @@ import 'package:groceryapp/Widgets/HeartBtn.dart';
 import 'package:groceryapp/Widgets/PriceWidget.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 import 'package:iconly/iconly.dart';
+import '../Widgets/BackWidget.dart';
 import '../consts/Style.dart';
 import '../services/Utils.dart';
 
@@ -35,17 +36,9 @@ class _ProductDetailsState extends State<ProductDetails> {
     final bool isDark = Utils(context).getTheme;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Style.themeData(true, context).scaffoldBackgroundColor,
+        backgroundColor: Style.themeData(isDark, context).scaffoldBackgroundColor,
         elevation: 0,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pop(context);
-          },
-          child: Icon(
-            IconlyLight.arrow_left_2,
-            color: color,
-          ),
-        ),
+        leading: BackWidget(),
         centerTitle: true,
       ),
       body: Column(
@@ -227,6 +220,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           child: Icon(
             icon,
             size: 20,
+            color:Colors.white,
           ),
         ),
       ),
