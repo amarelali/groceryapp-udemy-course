@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/screens/wishlist/WishlistWidget.dart';
+import 'package:groceryapp/services/GlobalMethods.dart';
 import 'package:groceryapp/services/Utils.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../Widgets/BackWidget.dart';
@@ -27,9 +28,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
         elevation: 0,
         leading: BackWidget(),
         actions: [
-          Icon(
-            CupertinoIcons.delete,
-            color: color,
+          IconButton(
+            onPressed: (){
+              GlobalMethods.warningDialog(context: context, title: 'Empty your wishlist', subtitle: 'Are you sure?', fct: (){});
+            },
+            icon: Icon(
+              CupertinoIcons.delete,
+              color: color,
+            ),
           )
         ],
       ),

@@ -120,7 +120,7 @@ class _UserScreenState extends State<UserScreen> {
                 fontSize: 24,
                 color: color,
                 function: () async {
-                  await _logoutShowAlert();
+                  await GlobalMethods.warningDialog(context: context, title: 'Sign out', subtitle: 'Do you want to sign out?', fct: (){});
                 }),
           ],
         ),
@@ -186,27 +186,4 @@ class _UserScreenState extends State<UserScreen> {
         });
   }
 
-  Future<void> _logoutShowAlert() async {
-    await showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-
-            title: Row(
-              children: [
-                Image.asset('Assets/Images/warning-sign.png',height: 20,width: 20,fit : BoxFit.fill),
-                SizedBox(width: 8,),
-                Text('Sign out'),
-              ],
-            ),
-            content: Text('Do you want to sign out?'),
-            actions: [
-              TextButton(onPressed: (){ if (Navigator.canPop(context)){
-                Navigator.pop(context);
-              }}, child: TextWidget(text: 'Cancel',color: Colors.cyan,fontSize: 18,)),
-              TextButton(onPressed: (){}, child: TextWidget(text: 'OK',fontSize: 18,color: Colors.redAccent,)),
-            ],
-          );
-        });
-  }
 }
