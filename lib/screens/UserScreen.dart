@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
+import 'package:groceryapp/screens/orders/OrdersScreen.dart';
 import 'package:groceryapp/screens/wishlist/WishlistScreen.dart';
 import 'package:groceryapp/services/GlobalMethods.dart';
 import 'package:iconly/iconly.dart';
@@ -77,7 +78,9 @@ class _UserScreenState extends State<UserScreen> {
                 icon: IconlyLight.wallet,
                 fontSize: 24,
                 color: color,
-                function: () {}),
+                function: () {
+                  GlobalMethods.navigateTo(context: context, routeName: OrdersScreen.routeName);
+                }),
             _listTiles(
                 title: "Wishlist",
                 icon: IconlyLight.heart,
