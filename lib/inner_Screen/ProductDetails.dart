@@ -100,7 +100,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 5),
                   SizedBox(
                     width: size.width * 0.3,
                     child: Row(
@@ -162,7 +162,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         topLeft: Radius.circular(40)),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 20),
+                          vertical: 10, horizontal: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -171,7 +171,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             children: [
                               TextWidget(
                                   text: 'Total', fontSize: 20, color: Colors.red),
-                              const SizedBox(height: 5,),
+                              const SizedBox(height: 3,),
                               Row(
                                 children: [
                                   TextWidget(
