@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceryapp/Widgets/BackWidget.dart';
 import 'package:groceryapp/Widgets/OnSaleWidget.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 import 'package:groceryapp/services/Utils.dart';
@@ -12,7 +13,7 @@ class ProductsOnSale extends StatelessWidget {
     Size size = utils.screenSize;
     Color color = utils.color;
     return Scaffold(
-      appBar: AppBar(title: TextWidget(text: 'Products on sale',isTitle: true,fontSize: 20,color: color,),) ,
+      appBar: AppBar(title: TextWidget(text: 'Products on sale',isTitle: true,fontSize: 20,color: color,),backgroundColor: Theme.of(context).scaffoldBackgroundColor,leading: BackWidget(),) ,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.count(

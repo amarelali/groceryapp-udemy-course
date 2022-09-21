@@ -5,6 +5,7 @@ import 'package:groceryapp/services/GlobalMethods.dart';
 import 'package:groceryapp/services/Utils.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../Widgets/BackWidget.dart';
+import '../../Widgets/EmptyScreen.dart';
 
 class WishlistScreen extends StatefulWidget {
   static const routeName = '/WishlistScreen';
@@ -19,8 +20,15 @@ class _WishlistScreenState extends State<WishlistScreen> {
   @override
   Widget build(BuildContext context) {
     final Color color = Utils(context).color;
+    bool _isEmpty = true;
 
-    return Scaffold(
+    return _isEmpty
+        ? EmptyScreen(
+      imagePath: 'Assets/Images/wishlist.png',
+      title :"Your wishlist is empty",
+      subtitle: "Explore more and shortlist some items",
+      buttonTitle: "Add a wish",
+    ) :  Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         centerTitle: true,
