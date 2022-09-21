@@ -26,7 +26,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
         ? EmptyScreen(
             imagePath: 'Assets/Images/wishlist.png',
             title: "You didn't place any order yet",
-            subtitle: "Order something and make me happy",
+            subtitle: "Order something and make me happy :)",
             buttonTitle: "Shop now",
           )
         : Scaffold(
