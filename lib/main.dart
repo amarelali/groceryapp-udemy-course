@@ -4,6 +4,7 @@ import 'package:groceryapp/inner_Screen/ProductsOnSale.dart';
 import 'package:groceryapp/providers/darkTheme_provider.dart';
 import 'package:groceryapp/screens/BottomBarScreen.dart';
 import 'package:groceryapp/consts/Style.dart';
+import 'package:groceryapp/screens/auth/LoginScreen.dart';
 import 'package:groceryapp/screens/orders/OrdersScreen.dart';
 import 'package:groceryapp/screens/viewed/ViewedRecentlyScreen.dart';
 import 'package:groceryapp/screens/wishlist/WishlistScreen.dart';
@@ -45,7 +46,7 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             theme: Style.themeData(darkthemeprovider.getThemeMode,context),
-            home: BottomBarScreen(),
+            home: const LoginScreen(),
             routes: {
               ProductsOnSale.routeName : (cxt) => const ProductsOnSale(),
               FeedsScreen.routeName : (ctx) => const FeedsScreen(),

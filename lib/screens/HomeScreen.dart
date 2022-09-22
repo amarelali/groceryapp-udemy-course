@@ -9,6 +9,7 @@ import 'package:card_swiper/card_swiper.dart';
 
 import '../Widgets/FeedsWidget.dart';
 import '../Widgets/OnSaleWidget.dart';
+import '../consts/consts.dart';
 import '../services/Utils.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,12 +20,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<String> _offersImages = [
-    'Assets/Images/offers/Offer1.jpg',
-    'Assets/Images/offers/Offer2.jpg',
-    'Assets/Images/offers/Offer3.jpg',
-    'Assets/Images/offers/Offer4.jpg',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 autoplay: true,
                 itemBuilder: (BuildContext context, int index) {
                   return Image.asset(
-                    _offersImages[index],
+                    Consts.offersImages[index],
                     fit: BoxFit.fill,
                   );
                 },
-                itemCount: _offersImages.length,
+                itemCount: Consts.offersImages.length,
                 pagination: const SwiperPagination(
                     builder: DotSwiperPaginationBuilder(
                   color: Colors.white,
