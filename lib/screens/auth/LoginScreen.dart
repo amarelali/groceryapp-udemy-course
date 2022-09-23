@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 
+import '../../Widgets/AuthButton.dart';
+import '../../Widgets/GoogleButton.dart';
 import '../../consts/consts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -132,9 +134,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                           suffixIcon: GestureDetector(
                               onTap: () {
-                                  setState(() {
-                                    _obscureText = !_obscureText;
-                                  });
+                                setState(() {
+                                  _obscureText = !_obscureText;
+                                });
                               },
                               child: Icon(
                                   _obscureText
@@ -155,6 +157,75 @@ class _LoginScreenState extends State<LoginScreen> {
                       )
                     ],
                   ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Align(
+                    alignment: Alignment.topRight,
+                    child: TextButton(
+                        onPressed: () {},
+                        child: Text('Forget Password',
+                            style: TextStyle(
+                                color: Colors.lightBlue,
+                                decoration: TextDecoration.underline,
+                                fontSize: 18,
+                                fontStyle: FontStyle.italic)))),
+                const SizedBox(
+                  height: 8,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: AuthButton(fct: () {}, ButtonText: 'Login'),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                const GoogleButton(),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    const Expanded(
+                        flex: 2,
+                        child: Divider(
+                          color: Colors.white,
+                          thickness: 2,
+                        )),
+                    const SizedBox(width: 5),
+                    TextWidget(
+                      text: 'OR',
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(width: 5),
+                    const Expanded(
+                        flex: 2,
+                        child: Divider(
+                          color: Colors.white,
+                          thickness: 2,
+                        ))
+                  ],
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: AuthButton(
+                      ButtonText: 'Continue as a guest',
+                      fct: () {},
+                      primary: Colors.black),
+                ),
+                const SizedBox(height: 8),
+                RichText(
+                  text: TextSpan(
+                      text: 'Don\'t have an accout ?',
+                      style: TextStyle(fontSize: 18),
+                      children: [
+                        TextSpan(
+                            text: ' Sign up',
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.lightBlue,
+                                decoration: TextDecoration.underline))
+                      ]),
                 ),
               ],
             ),
