@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
 
 class AuthButton extends StatelessWidget {
-  const AuthButton({Key? key, required this.ButtonText, this.primary = Colors.white38, required this.fct})
+  const AuthButton({Key? key, required this.buttonText, this.primary = Colors.white38, required this.fct})
       : super(key: key);
-  final String ButtonText;
+  final String buttonText;
   final Color primary;
   final Function fct;
 
@@ -15,7 +15,7 @@ class AuthButton extends StatelessWidget {
         fct();
       },
       child: TextWidget(
-        text: ButtonText,
+        text: buttonText,
         fontSize: 18,
         color: Colors.white,
       ),

@@ -34,7 +34,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
         centerTitle: true,
         title: Text('Wishlist (16)', style: TextStyle(color: color,fontSize: 20),),
         elevation: 0,
-        leading: BackWidget(),
+        leading:  BackWidget(color: color,),
         actions: [
           IconButton(
             onPressed: (){

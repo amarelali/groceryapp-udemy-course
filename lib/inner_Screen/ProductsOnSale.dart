@@ -13,7 +13,7 @@ class ProductsOnSale extends StatelessWidget {
     Size size = utils.screenSize;
     Color color = utils.color;
     return Scaffold(
-      appBar: AppBar(title: TextWidget(text: 'Products on sale',isTitle: true,fontSize: 20,color: color,),backgroundColor: Theme.of(context).scaffoldBackgroundColor,leading: BackWidget(),) ,
+      appBar: AppBar(title: TextWidget(text: 'Products on sale',isTitle: true,fontSize: 20,color: color,),backgroundColor: Theme.of(context).scaffoldBackgroundColor,leading:  BackWidget(color: color,),) ,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.count(

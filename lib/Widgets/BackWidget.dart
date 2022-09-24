@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/services/Utils.dart';
 import 'package:iconly/iconly.dart';
 class BackWidget extends StatelessWidget {
-  const BackWidget({Key? key}) : super(key: key);
+  BackWidget({Key? key, required this.color}) : super(key: key);
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
-    final Color color = Utils(context).color;
 
     return GestureDetector(
       onTap: () {

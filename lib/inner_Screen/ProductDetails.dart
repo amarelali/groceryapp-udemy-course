@@ -38,7 +38,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         backgroundColor: Style.themeData(isDark, context).scaffoldBackgroundColor,
         elevation: 0,
-        leading: BackWidget(),
+        leading:  BackWidget(color: color,),
         centerTitle: true,
       ),
       body: Column(

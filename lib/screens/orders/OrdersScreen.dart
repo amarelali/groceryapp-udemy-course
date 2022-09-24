@@ -39,7 +39,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   fontSize: 22,
                   isTitle: true,
                 ),
-                leading: const BackWidget(),
+                leading:  BackWidget(color: color,),
                 actions: [
                   IconButton(
                       onPressed: () {

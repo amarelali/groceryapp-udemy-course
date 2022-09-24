@@ -1,8 +1,11 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/Widgets/TextWidget.dart';
-
+import 'package:groceryapp/screens/auth/ForgetPass.dart';
+import 'package:groceryapp/screens/auth/RegisterScreen.dart';
+import 'package:groceryapp/services/GlobalMethods.dart';
 import '../../Widgets/AuthButton.dart';
 import '../../Widgets/GoogleButton.dart';
 import '../../consts/consts.dart';
@@ -164,7 +167,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 Align(
                     alignment: Alignment.topRight,
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          GlobalMethods.navigateTo(context: context, routeName: ForgetPass.routeName);
+                        },
                         child: Text('Forget Password',
                             style: TextStyle(
                                 color: Colors.lightBlue,
@@ -176,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: AuthButton(fct: () {}, ButtonText: 'Login'),
+                  child: AuthButton(fct:_submitLoginForm, buttonText: 'Login'),
                 ),
                 const SizedBox(
                   height: 8,
@@ -209,9 +214,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: AuthButton(
-                      ButtonText: 'Continue as a guest',
+                      buttonText: 'Continue as a guest',
                       fct: () {},
-                      primary: Colors.black),
+                      primary: Colors.black, ),
                 ),
                 const SizedBox(height: 8),
                 RichText(
@@ -223,8 +228,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: ' Sign up',
                             style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.lightBlue,
-                                decoration: TextDecoration.underline))
+                                color: Colors.lightBlue,),
+                        recognizer: TapGestureRecognizer()..onTap = (){
+                              GlobalMethods.navigateTo(context: context, routeName: RegisterScreen.routeName);
+                        }
+                         ),
                       ]),
                 ),
               ],
